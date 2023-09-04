@@ -2,27 +2,27 @@ import React, { useState } from "react";
 import Section from "./section";
 import "../styles/FormContainer.css";
 
-const FormContainers = () => {
+const FormContainer = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const personalDetails = [
-    { title: "first name", inputType: "text", className: "first" },
-    { title: "last name", inputType: "text", className: "last" },
+    { title: "first name", inputType: "text", className: "firstName" },
+    { title: "last name", inputType: "text", className: "lastName" },
     { title: "email", inputType: "email" },
-    { title: "phone #", inputType: "tel" },
+    { title: "phone #", inputType: "tel", className: "phoneNum" },
   ];
 
   const education = [
     { title: "school", inputType: "text" },
     { title: "degree", inputType: "text" },
-    { title: "start year", inputType: "text", className: "start" },
-    { title: "end year", inputType: "text", className: "end" },
+    { title: "start year", inputType: "text", className: "startYear" },
+    { title: "end year", inputType: "text", className: "endYear" },
   ];
 
   const experience = [
-    { title: "company name", inputType: "text", className: "company" },
-    { title: "position title", inputType: "text", className: "position" },
-    { title: "start date", inputType: "text", className: "start" },
-    { title: "end date", inputType: "text", className: "end" },
+    { title: "company name", inputType: "text", className: "companyName" },
+    { title: "position title", inputType: "text", className: "positionTitle" },
+    { title: "start date", inputType: "text", className: "startDate" },
+    { title: "end date", inputType: "text", className: "endDate" },
     { title: "description", inputType: "textarea" },
   ];
 
@@ -36,6 +36,8 @@ const FormContainers = () => {
         onClick={() => {
           setActiveIndex(0);
         }}
+        formData={props.personalInfo}
+        onChange={props.handlePersonal}
       ></Section>
       <Section
         title="education"
@@ -45,6 +47,10 @@ const FormContainers = () => {
         onClick={() => {
           setActiveIndex(1);
         }}
+        formData={props.educationInfo}
+        formEntries={props.educationEntries}
+        onChange={props.handleEducation}
+        setFormEntries={props.handleEducationEntries}
       ></Section>
       <Section
         title="experience"
@@ -54,9 +60,13 @@ const FormContainers = () => {
         onClick={() => {
           setActiveIndex(2);
         }}
+        formData={props.experienceInfo}
+        formEntries={props.experienceEntries}
+        onChange={props.handleExperience}
+        setFormEntries={props.handleExperienceEntries}
       ></Section>
     </div>
   );
 };
 
-export default FormContainers;
+export default FormContainer;

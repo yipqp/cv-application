@@ -12,6 +12,10 @@ const Section = (props) => {
         formGroups={props.formGroups}
         className={props.className}
         show={props.isShown}
+        onChange={props.onChange}
+        formData={props.formData}
+        formEntries={props.formEntries}
+        setFormEntries={props.setFormEntries}
       ></SectionForm>
     </div>
   );
