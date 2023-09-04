@@ -29,33 +29,35 @@ label {
   gap: 10px;
 }
 
-input {
+input,
+textarea {
   border: none;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
   background-color: var(--input-bgc);
 }
 
-.first {
-  grid-area: first;
+textarea {
+  resize: none;
+  font-family: inherit;
 }
 
-.last {
-  grid-area: last;
-}
-
-.email {
-  grid-area: email;
-}
-
-.phone {
-  grid-area: phone;
-}
-
-.personal-details-form {
+.personal-details-form,
+.education-form {
   grid: repeat(3, 1fr) / repeat(2, 1fr);
-  grid-template-areas:
-    "first last"
-    "email email"
-    "phone phone";
+}
+
+.description {
+  display: flex;
+  flex-flow: column;
+}
+
+.email,
+.phone,
+.school,
+.degree,
+.company,
+.position,
+.description {
+  grid-column: 1 / 3;
 }

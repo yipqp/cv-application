@@ -18,6 +18,14 @@ const FormContainers = () => {
     { title: "end year", inputType: "text", className: "end" },
   ];
 
+  const experience = [
+    { title: "company name", inputType: "text", className: "company" },
+    { title: "position title", inputType: "text", className: "position" },
+    { title: "start date", inputType: "text", className: "start" },
+    { title: "end date", inputType: "text", className: "end" },
+    { title: "description", inputType: "textarea" },
+  ];
+
   return (
     <div className="form-container">
       <Section
@@ -36,6 +44,15 @@ const FormContainers = () => {
         isShown={activeIndex === 1}
         onClick={() => {
           setActiveIndex(1);
+        }}
+      ></Section>
+      <Section
+        title="experience"
+        formGroups={experience}
+        className="experience-form"
+        isShown={activeIndex === 2}
+        onClick={() => {
+          setActiveIndex(2);
         }}
       ></Section>
     </div>

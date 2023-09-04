@@ -7,6 +7,15 @@ function SectionForm(props) {
     <form action="" className={props.className + " " + showClass}>
       {props.formGroups.map((group) => {
         const { title, inputType, className = title } = group;
+        const useTextArea = inputType === "textarea";
+        if (useTextArea) {
+          return (
+            <div className={className} key={title}>
+              {title}
+              <textarea rows="5"></textarea>
+            </div>
+          );
+        }
         return (
           <label className={className} htmlFor={title} key={title}>
             {title}
