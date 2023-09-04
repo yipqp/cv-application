@@ -1,0 +1,49 @@
+:root {
+  --section-bgc: #f8fafc;
+  --header-underline-bgc: #94a3b8;
+}
+
+.section-container {
+  display: flex;
+  flex-flow: column;
+  background-color: var(--section-bgc);
+  border-radius: 25px;
+  padding: 25px;
+}
+
+.card-header {
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  border: none;
+  background-color: inherit;
+  border-radius: 25px;
+  text-align: left;
+  min-width: 225px;
+}
+
+h2 {
+  position: relative;
+}
+
+h2::after {
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  z-index: 99;
+  content: "";
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  background-color: var(--header-underline-bgc);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: left;
+}
+
+h2:hover::after {
+  transform: scaleX(1);
+}
+
+.underline::after {
+  transform: scaleX(1);
+}

@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+:root {
+  --input-bgc: #e2e8f0;
+}
+
+form {
+  display: grid;
+  font-family: "Rubik", sans-serif;
+  max-height: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+  transition: opacity 0.2s linear, transform 0.25s ease-in-out,
+    max-height 0.25s ease-in-out, margin-top 0.25s linear;
+  gap: 20px;
+}
+
+.show {
+  margin-top: 25px;
+  max-height: 500px;
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+label {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+input {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: var(--input-bgc);
+}
+
+.first {
+  grid-area: first;
+}
+
+.last {
+  grid-area: last;
+}
+
+.email {
+  grid-area: email;
+}
+
+.phone {
+  grid-area: phone;
+}
+
+.personal-details-form {
+  grid: repeat(3, 1fr) / repeat(2, 1fr);
+  grid-template-areas:
+    "first last"
+    "email email"
+    "phone phone";
+}
