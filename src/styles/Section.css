@@ -1,6 +1,7 @@
 :root {
   --section-bgc: #f8fafc;
   --header-underline-bgc: #94a3b8;
+  --add-entry-bgc: #6366f1;
 }
 
 .section-container {
@@ -20,6 +21,21 @@
   border-radius: 25px;
   text-align: left;
   min-width: 225px;
+}
+
+.add-entry {
+  display: none;
+  width: 100%;
+  background-color: var(--add-entry-bgc);
+  color: var(--section-bgc);
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
 
 h2 {

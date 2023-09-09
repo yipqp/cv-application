@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/ResumeDisplay.css";
 
 const ResumeDisplay = ({ personalInfo, educationArr, experienceArr }) => {

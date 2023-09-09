@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Section from "./section";
 import "../styles/FormContainer.css";
 
@@ -34,7 +34,7 @@ const FormContainer = (props) => {
         className="personal-details-form"
         isShown={activeIndex === 0}
         onClick={() => {
-          setActiveIndex(0);
+          activeIndex === 0 ? setActiveIndex(-1) : setActiveIndex(0);
         }}
         formData={props.personalInfo}
         onChange={props.handlePersonal}
@@ -45,7 +45,7 @@ const FormContainer = (props) => {
         className="education-form"
         isShown={activeIndex === 1}
         onClick={() => {
-          setActiveIndex(1);
+          activeIndex === 1 ? setActiveIndex(-1) : setActiveIndex(1);
         }}
         formData={props.educationInfo}
         formEntries={props.educationEntries}
@@ -58,7 +58,7 @@ const FormContainer = (props) => {
         className="experience-form"
         isShown={activeIndex === 2}
         onClick={() => {
-          setActiveIndex(2);
+          activeIndex === 2 ? setActiveIndex(-1) : setActiveIndex(2);
         }}
         formData={props.experienceInfo}
         formEntries={props.experienceEntries}
