@@ -2,7 +2,7 @@ import "../styles/SectionForm.css";
 import { v4 as uuidv4 } from "uuid";
 
 function SectionForm(props) {
-  const showClass = props.show ? "show" : "";
+  const showClass = props.show ? "show-form" : "";
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -13,13 +13,22 @@ function SectionForm(props) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const entries = formData.entries();
-    const objID = props.id === "add" ? `${props.title}-${uuidv4()}` : props.id;
+    let objID;
+
+    if (props.title === "personal details") {
+      objID = "user-profile";
+    } else if (props.id === "add") {
+      objID = `${props.title}-${uuidv4()}`;
+    } else {
+      objID = props.id;
+    }
     let newFormEntry = { id: objID };
     for (const val of entries) {
       newFormEntry = { ...newFormEntry, [val[0]]: val[1] };
     }
-    props.setFormEntries?.(new Map(props.formEntries.set(objID, newFormEntry)));
+    props.setFormEntries(new Map(props.formEntries.set(objID, newFormEntry)));
     handleReset(e);
+    props.onCancel();
   };
 
   const handleDelete = () => {
@@ -93,13 +102,7 @@ function SectionForm(props) {
         >
           cancel
         </button>
-        <button
-          type="submit"
-          className="save-button"
-          onClick={() => {
-            props.onCancel();
-          }}
-        >
+        <button type="submit" className="save-button">
           save
         </button>
       </div>

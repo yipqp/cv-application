@@ -4,7 +4,19 @@ import FormContainer from "./components/FormContainer";
 import ResumeDisplay from "./components/ResumeDisplay";
 
 function App() {
+  const defaultProfileValues = {
+    id: "user-profile",
+    firstName: "My",
+    lastName: "Name",
+    email: "",
+    phoneNum: "",
+  };
+
+  const personalProfileMap = new Map();
+  personalProfileMap.set("user-profile", defaultProfileValues);
+
   const [personalInfo, setPersonalInfo] = useState(null);
+  const [personalProfile, setPersonalProfile] = useState(personalProfileMap);
   const [educationInfo, setEducationInfo] = useState(null);
   const [educationEntries, setEducationEntries] = useState(new Map());
   const [experienceInfo, setExperienceInfo] = useState(null);
@@ -15,6 +27,8 @@ function App() {
       <FormContainer
         handlePersonal={setPersonalInfo}
         personalInfo={personalInfo}
+        personalProfile={personalProfile}
+        handlePersonalProfile={setPersonalProfile}
         handleEducation={setEducationInfo}
         educationInfo={educationInfo}
         handleEducationEntries={setEducationEntries}

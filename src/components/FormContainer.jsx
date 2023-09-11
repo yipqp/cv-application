@@ -38,6 +38,8 @@ const FormContainer = (props) => {
         }}
         formData={props.personalInfo}
         onChange={props.handlePersonal}
+        formEntries={props.personalProfile}
+        setFormEntries={props.handlePersonalProfile}
       ></Section>
       <Section
         title="education"
@@ -48,8 +50,8 @@ const FormContainer = (props) => {
           activeIndex === 1 ? setActiveIndex(-1) : setActiveIndex(1);
         }}
         formData={props.educationInfo}
-        formEntries={props.educationEntries}
         onChange={props.handleEducation}
+        formEntries={props.educationEntries}
         setFormEntries={props.handleEducationEntries}
       ></Section>
       <Section
@@ -61,8 +63,8 @@ const FormContainer = (props) => {
           activeIndex === 2 ? setActiveIndex(-1) : setActiveIndex(2);
         }}
         formData={props.experienceInfo}
-        formEntries={props.experienceEntries}
         onChange={props.handleExperience}
+        formEntries={props.experienceEntries}
         setFormEntries={props.handleExperienceEntries}
       ></Section>
     </div>
