@@ -39,9 +39,9 @@ function App() {
         experienceEntries={experienceEntries}
       ></FormContainer>
       <ResumeDisplay
-        personalSection={personalInfo}
-        educationSection={educationInfo}
-        experienceSection={educationInfo}
+        personalProfile={personalProfile}
+        educationEntries={educationEntries}
+        experienceEntries={experienceEntries}
       ></ResumeDisplay>
     </div>
   );

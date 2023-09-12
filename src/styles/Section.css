@@ -47,6 +47,7 @@
 }
 
 .add-entry {
+  display: flex;
   background-color: var(--add-entry-bgc);
   color: var(--section-bgc);
   border-radius: 25px;

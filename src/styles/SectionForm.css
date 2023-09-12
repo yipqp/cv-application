@@ -16,14 +16,15 @@ form {
 }
 
 .show-form {
-  margin-top: 25px;
-  max-height: 500px;
+  margin-top: 10px;
+  max-height: 600px;
   transform: scaleY(1);
   opacity: 1;
   padding: 0 20px 20px;
 }
 
-label {
+label,
+.description {
   display: flex;
   flex-flow: column;
   gap: 10px;
@@ -35,6 +36,7 @@ textarea {
   border-radius: 10px;
   padding: 15px;
   background-color: var(--input-bgc);
+  min-width: 0;
 }
 
 textarea {
@@ -72,9 +74,25 @@ button {
 
 .button-container {
   display: flex;
+  justify-content: flex-end;
   gap: 25px;
+}
+
+.button-container > button {
+  padding: 10px 20px;
 }
 
 .delete-button {
   margin-right: auto;
+}
+
+@media only screen and (max-width: 518px) {
+  form {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .button-container {
+    gap: 15px;
+  }
 }

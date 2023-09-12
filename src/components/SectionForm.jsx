@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 function SectionForm(props) {
   const showClass = props.show ? "show-form" : "";
+  const isPersonalDetails = props.title === "personal details";
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,7 +16,7 @@ function SectionForm(props) {
     const entries = formData.entries();
     let objID;
 
-    if (props.title === "personal details") {
+    if (isPersonalDetails) {
       objID = "user-profile";
     } else if (props.id === "add") {
       objID = `${props.title}-${uuidv4()}`;
@@ -89,9 +90,15 @@ function SectionForm(props) {
         );
       })}
       <div className="button-container">
-        <button type="button" className="delete-button" onClick={handleDelete}>
-          delete
-        </button>
+        {!isPersonalDetails && (
+          <button
+            type="button"
+            className="delete-button"
+            onClick={handleDelete}
+          >
+            delete
+          </button>
+        )}
         <button
           type="reset"
           className="cancel-button"

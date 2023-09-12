@@ -1,5 +1,98 @@
 .resume-display {
   background-color: #fff;
+  width: clamp(700px, 900px, 100%);
+  min-height: max(700px, 100vh);
+  padding: 65px;
+}
+
+.resume-body {
+  display: flex;
+  flex-flow: column;
+  gap: 30px;
+}
+
+.resume-header-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.header-container {
+  display: flex;
+  flex-flow: column;
+  gap: 4px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+.applicant-info-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+}
+
+.item-container {
+  display: flex;
+  flex-flow: column;
+  gap: 4px;
+  margin-left: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-header {
+  font-size: 32px;
+  text-align: center;
+}
+
+.name-header::after {
+  display: none;
+}
+
+.section-header {
+  position: relative;
+  font-weight: normal;
+}
+
+.section-header::after {
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  content: "";
   width: 100%;
-  padding: 25px;
+  height: 2px;
+  background-color: var(--header-underline-bgc);
+}
+
+.sub-header {
+  font-style: italic;
+}
+
+.bullet-points {
+  margin-left: 30px;
+  font-style: normal;
+}
+
+@media only screen and (max-width: 1403px) {
+  .resume-display {
+    align-self: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .resume-display {
+    width: 100%;
+    padding: 40px;
+  }
 }
