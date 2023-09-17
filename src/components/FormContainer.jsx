@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Section from "./section";
+import Section from "./Section";
 import "../styles/FormContainer.css";
 
 const FormContainer = (props) => {
